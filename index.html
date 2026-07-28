@@ -448,7 +448,6 @@
             </table>
         </div>
         <button class="btn btn-excel" onclick="exportToCSV()">📥 DESCARGAR RESULTADOS (EXCEL / CSV)</button>
-        <button class="btn" style="background:#ef4444;margin-top:6px;" onclick="clearLeaderboard()">🧹 LIMPIAR TABLA DE POSICIONES</button>
         <button class="btn btn-secondary" onclick="restartGame()">🏠 VOLVER AL INICIO</button>
     </div>
 </div>
@@ -934,32 +933,6 @@ function exportToCSV() {
     link.click();
     document.body.removeChild(link);
 }
-
-// NUEVA FUNCIÓN: LIMPIAR LA TABLA DE POSICIONES (LOCAL + REMOTO)
-async function clearLeaderboard() {
-    if (!confirm('¿Seguro que quieres borrar TODOS los registros de la tabla de posiciones? Esta acción no se puede deshacer.')) return;
-    // Borra localmente
-    localStorage.removeItem('dragon_leaderboard');
-    try {
-        const res = await fetch(LEADERBOARD_BLOB_URL, {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify([])
-        });
-        if (!res.ok) {
-            console.warn('No se pudo limpiar el blob remoto, status:', res.status);
-            alert('Registros borrados localmente. No se pudo limpiar el registro remoto (ver consola).');
-        } else {
-            alert('Tabla de posiciones reiniciada (local y remoto).');
-        }
-    } catch (err) {
-        console.warn('Error limpiando remoto:', err);
-        alert('Registros borrados localmente. No se pudo limpiar el registro remoto (ver consola).');
-    }
-    // Refresca la vista
-    await showLeaderboardScreen();
-}
-
 function restartGame() {
     showScreen('screen-welcome');
 }
