@@ -13,29 +13,22 @@
             margin: 0;
             padding: 0;
         }
+
         body {
-            background: radial-gradient(circle at top left, rgba(248, 113, 113, 0.18), transparent 24%), linear-gradient(135deg, #090d16 0%, #111827 100%);
+            background: linear-gradient(135deg, #090d16 0%, #111827 100%);
             color: #f8fafc;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
-            overflow-x: hidden;
         }
-        body::before {
-            content: "";
-            position: fixed;
-            inset: -20%;
-            background: radial-gradient(circle, rgba(56, 189, 248, 0.16), transparent 42%);
-            animation: pulseGlow 6s ease-in-out infinite;
-            pointer-events: none;
-        }
+
         .container {
-            background: linear-gradient(145deg, rgba(31, 41, 55, 0.98), rgba(17, 24, 39, 0.98));
+            background-color: #1f2937;
             border: 3px solid #f59e0b;
             border-radius: 16px;
-            box-shadow: 0 0 30px rgba(245, 158, 11, 0.3), inset 0 0 18px rgba(251, 191, 36, 0.08);
+            box-shadow: 0 0 25px rgba(245, 158, 11, 0.3);
             max-width: 800px;
             width: 100%;
             padding: 25px;
@@ -43,14 +36,7 @@
             position: relative;
             overflow: hidden;
         }
-        .container::before {
-            content: "";
-            position: absolute;
-            inset: -30px;
-            background: radial-gradient(circle at top right, rgba(251, 191, 36, 0.18), transparent 36%);
-            pointer-events: none;
-            animation: shimmer 5s linear infinite;
-        }
+
         h1 {
             color: #fbbf24;
             font-size: 22px;
@@ -58,17 +44,20 @@
             margin-bottom: 15px;
             text-shadow: 0 0 10px rgba(251, 191, 36, 0.4);
         }
+
         h2 {
             font-size: 16px;
             color: #f1f5f9;
             margin-bottom: 15px;
         }
+
         p {
             font-size: 13px;
             line-height: 1.5;
             margin-bottom: 15px;
             color: #cbd5e1;
         }
+
         .btn {
             background-color: #d97706;
             color: white;
@@ -83,29 +72,28 @@
             width: 100%;
             display: block;
         }
+
         .btn:hover {
             background-color: #b45309;
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
         }
+
         .btn-secondary {
             background-color: #4b5563;
         }
+
         .btn-secondary:hover {
             background-color: #374151;
         }
+
         .btn-excel {
             background-color: #10b981;
         }
+
         .btn-excel:hover {
             background-color: #059669;
         }
-        .btn-danger {
-            background-color: #dc2626;
-        }
-        .btn-danger:hover {
-            background-color: #991b1b;
-        }
+
         input[type="text"] {
             width: 100%;
             padding: 12px;
@@ -118,63 +106,20 @@
             text-align: center;
             outline: none;
         }
+
         input[type="text"]:focus {
             border-color: #f59e0b;
             box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
         }
+
         .screen {
             display: none;
         }
+
         .screen.active {
             display: block;
-            animation: fadeIn 0.35s ease;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(6px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .hero-card {
-            background: linear-gradient(135deg, rgba(251, 191, 36, 0.16), rgba(59, 130, 246, 0.14));
-            border: 1px solid rgba(251, 191, 36, 0.35);
-            border-radius: 12px;
-            padding: 12px;
-            margin-bottom: 12px;
-        }
-        .status-chip {
-            display: inline-block;
-            background-color: #111827;
-            border: 1px solid #f59e0b;
-            color: #fbbf24;
-            border-radius: 999px;
-            padding: 6px 10px;
-            font-size: 10px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        .accent-text {
-            color: #fbbf24;
-            font-weight: 700;
-            font-size: 12px;
-            margin-bottom: 0;
-        }
-        .tip-list {
-            display: grid;
-            gap: 8px;
-            margin: 12px 0 16px;
-            text-align: left;
-        }
-        .tip-item {
-            background-color: #111827;
-            border: 1px solid #374151;
-            border-radius: 8px;
-            padding: 8px 10px;
-            font-size: 11px;
-            color: #cbd5e1;
-        }
-        .option-btn:disabled {
-            opacity: 0.8;
-            cursor: default;
-        }
+
         /* GAME CANVAS & HUD */
         #canvas-container {
             position: relative;
@@ -185,11 +130,13 @@
             border: 2px solid #374151;
             overflow: hidden;
         }
+
         canvas {
             display: block;
             width: 100%;
             height: 200px;
         }
+
         .hud {
             display: flex;
             justify-content: space-between;
@@ -201,20 +148,24 @@
             font-size: 12px;
             font-weight: bold;
         }
+
         .gems-bar {
             display: flex;
             gap: 6px;
         }
+
         .gem-icon {
             font-size: 18px;
             opacity: 0.25;
             transition: all 0.5s ease;
         }
+
         .gem-icon.acquired {
             opacity: 1;
             transform: scale(1.2);
             filter: drop-shadow(0 0 5px #38bdf8);
         }
+
         .question-box {
             background-color: #111827;
             border: 2px solid #3b82f6;
@@ -223,22 +174,26 @@
             margin-bottom: 15px;
             text-align: left;
         }
+
         .question-title {
             color: #60a5fa;
             font-size: 12px;
             margin-bottom: 6px;
             font-weight: bold;
         }
+
         .question-text {
             font-size: 13px;
             color: #f8fafc;
             line-height: 1.4;
         }
+
         .options-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 10px;
         }
+
         .option-btn {
             background-color: #374151;
             color: white;
@@ -251,48 +206,48 @@
             transition: all 0.2s;
             line-height: 1.3;
         }
+
         .option-btn:hover {
             background-color: #4b5563;
             border-color: #fbbf24;
-            transform: translateY(-1px);
         }
-        .option-btn.correct-answer {
-            background: linear-gradient(135deg, #065f46, #10b981);
-            border-color: #34d399;
-            box-shadow: 0 0 12px rgba(16, 185, 129, 0.35);
+
+        .option-btn.correct-highlight {
+            background-color: #059669 !important;
+            border-color: #34d399 !important;
+            color: #ffffff !important;
         }
-        .option-btn.wrong-answer {
-            background: linear-gradient(135deg, #7f1d1d, #dc2626);
-            border-color: #f87171;
-            box-shadow: 0 0 12px rgba(220, 38, 38, 0.35);
+
+        .option-btn.wrong-highlight {
+            background-color: #dc2626 !important;
+            border-color: #f87171 !important;
+            color: #ffffff !important;
         }
-        .feedback-box {
-            margin-top: 12px;
-            padding: 12px 14px;
-            border-radius: 10px;
+
+        .feedback-banner {
+            display: none;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 15px;
             font-size: 12px;
-            font-weight: 700;
-            line-height: 1.5;
-            border: 1px solid transparent;
+            font-weight: bold;
+            text-align: center;
         }
-        .feedback-box.correct {
-            background: rgba(6, 95, 70, 0.22);
-            color: #bbf7d0;
-            border-color: #34d399;
+
+        .feedback-banner.correct {
+            display: block;
+            background-color: #065f46;
+            color: #34d399;
+            border: 1px solid #059669;
         }
-        .feedback-box.wrong {
-            background: rgba(127, 29, 29, 0.22);
-            color: #fecaca;
-            border-color: #f87171;
+
+        .feedback-banner.wrong {
+            display: block;
+            background-color: #991b1b;
+            color: #fca5a5;
+            border: 1px solid #dc2626;
         }
-        .next-btn {
-            margin-top: 10px;
-            width: 100%;
-            background: linear-gradient(135deg, #2563eb, #38bdf8);
-        }
-        .next-btn:hover {
-            background: linear-gradient(135deg, #1d4ed8, #0ea5e9);
-        }
+
         /* RESULT & TABLE STYLES */
         .badge {
             display: inline-block;
@@ -302,14 +257,17 @@
             font-size: 14px;
             margin-bottom: 15px;
         }
+
         .badge-win {
             background-color: #059669;
             color: white;
         }
+
         .badge-lose {
             background-color: #dc2626;
             color: white;
         }
+
         .stats-card {
             background-color: #111827;
             border-radius: 8px;
@@ -317,6 +275,7 @@
             margin: 15px 0;
             text-align: left;
         }
+
         .stats-row {
             display: flex;
             justify-content: space-between;
@@ -324,9 +283,34 @@
             border-bottom: 1px solid #1f2937;
             font-size: 12px;
         }
+
         .stats-row:last-child {
             border-bottom: none;
         }
+
+        .review-box {
+            background-color: #111827;
+            border: 1px solid #374151;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: left;
+            max-height: 220px;
+            overflow-y: auto;
+        }
+
+        .review-item {
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #1f2937;
+            font-size: 11px;
+        }
+
+        .review-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
         /* TABLA DE POSICIONES */
         .table-container {
             max-height: 250px;
@@ -335,20 +319,14 @@
             border: 1px solid #374151;
             border-radius: 8px;
         }
-        @keyframes pulseGlow {
-            0%, 100% { transform: scale(1); opacity: 0.65; }
-            50% { transform: scale(1.08); opacity: 1; }
-        }
-        @keyframes shimmer {
-            0% { transform: translateX(-12%) translateY(-8%); }
-            100% { transform: translateX(12%) translateY(8%); }
-        }
+
         table {
             width: 100%;
             border-collapse: collapse;
             font-size: 11px;
             text-align: left;
         }
+
         th {
             background-color: #111827;
             color: #fbbf24;
@@ -357,36 +335,35 @@
             top: 0;
             border-bottom: 2px solid #374151;
         }
+
         td {
             padding: 8px 10px;
             border-bottom: 1px solid #1f2937;
             color: #cbd5e1;
         }
+
         tr:nth-child(even) {
             background-color: #111827;
         }
     </style>
 </head>
 <body>
+
 <div class="container">
+
     <!-- PANTALLA 1: BIENVENIDA E INGRESO -->
     <div id="screen-welcome" class="screen active">
         <h1>BREAKOUT: LA MAZMORRA DEL DRAGÓN CATASTRAL</h1>
         <div style="font-size: 50px; margin: 10px 0;">🤺 ⚔️ 🐉</div>
-        <div class="hero-card">
-            <div class="status-chip">⚔️ MODO DE BATALLA • 5 ENIGMAS</div>
-            <p class="accent-text">GANA CON 4 DE 5 GEMAS PARA DERROTAR AL DRAGÓN Y ESCAPAR DE LA MAZMORRA.</p>
-        </div>
         <p>TOMA EL ROL DEL <strong>CABALLERO CATASTRAL</strong> Y ENFRENTA AL DRAGÓN QUE CUSTODIA LA SALIDA DE LA MAZMORRA.</p>
-        <div class="tip-list">
-            <div class="tip-item">🎯 RESPONDE CON CALMA Y USA LA LÓGICA DE LOS PROCEDIMIENTOS.</div>
-            <div class="tip-item">⚡ CADA ACIERTO SUMA 20 PUNTOS Y UNA GEMA DEL SABER.</div>
-            <div class="tip-item">🏆 LOS RESULTADOS SE GUARDAN AUTOMÁTICAMENTE Y PUEDEN EXPORTARSE.</div>
-        </div>
+        <p style="color: #fbbf24; font-weight: bold;">RESPONDE LAS 5 PREGUNTAS DEL JUEGO. SI REÚNES AL MENOS <strong>4 DE LAS 5 GEMAS DEL SABER</strong>, ¡EL CABALLERO DERROTARÁ AL DRAGÓN! DE LO CONTRARIO, ¡EL DRAGÓN LO INCINERARÁ!</p>
+        
         <input type="text" id="player-name" placeholder="INGRESA TU NOMBRE COMPLETO..." onkeypress="if(event.key==='Enter') event.preventDefault();">
+
         <h2>SELECCIONA TU GERENCIA O SUBGERENCIA:</h2>
         <button class="btn" onclick="startGame('GCAC')">GERENCIA COMERCIAL Y ATENCIÓN AL CIUDADANO (GCAC)</button>
-        <button class="btn btn-secondary" onclick="startGame('SUPAC')">SUBGERENCIA DE PARTICIPACIÓN Y ATENCIÓN AL CIUDADANO (SUPAC)</button>
+        <button class="btn btn-secondary" onclick="startGame('SPAC')">SUBGERENCIA DE PARTICIPACIÓN Y ATENCIÓN AL CIUDADANO (SPAC)</button>
+        
         <button class="btn btn-secondary" style="margin-top: 15px;" onclick="showLeaderboardScreen()">🏆 VER TABLA DE POSICIONES GENERAL</button>
     </div>
 
@@ -404,34 +381,45 @@
             </div>
             <div id="timer">TIEMPO: 0S</div>
         </div>
+
         <div id="canvas-container">
             <canvas id="battleCanvas" width="750" height="200"></canvas>
         </div>
+
+        <div id="feedback-banner" class="feedback-banner"></div>
+
         <div class="question-box">
             <div class="question-title" id="question-number">ENIGMA 1 DE 5</div>
             <div class="question-text" id="question-text">CARGANDO PREGUNTA...</div>
         </div>
+
         <div class="options-grid" id="options-container">
             <!-- Opciones generadas dinámicamente -->
         </div>
-        <div id="feedback-box" class="feedback-box" style="display:none;"></div>
-        <button id="next-question-btn" class="btn next-btn" style="display:none;" onclick="advanceToNextQuestion()">➡️ SIGUIENTE PREGUNTA</button>
     </div>
 
     <!-- PANTALLA 3: RESULTADO FINAL DE LA PARTIDA -->
     <div id="screen-result" class="screen">
         <h1 id="result-title">¡RESULTADO DE LA BATALLA!</h1>
         <div id="result-badge" class="badge"></div>
+
         <div id="canvas-result-container" style="margin: 15px 0;">
             <canvas id="finalBattleCanvas" width="750" height="200" style="border-radius: 8px; border: 2px solid #374151; background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%); width: 100%; height: 200px;"></canvas>
         </div>
+
         <div class="stats-card">
             <div class="stats-row"><span>JUGADOR:</span><strong id="res-name"></strong></div>
-            <div class="stats-row"><span>ÁREA / GERENCIA:</span><strong id="res-area"></strong></div>
+            <div class="stats-row"><span>ÁREA / SUBGERENCIA:</span><strong id="res-area"></strong></div>
             <div class="stats-row"><span>GEMAS RECOLECTADAS:</span><strong id="res-gems"></strong></div>
             <div class="stats-row"><span>PUNTAJE FINAL:</span><strong id="res-score"></strong></div>
             <div class="stats-row"><span>TIEMPO TOTAL:</span><strong id="res-time"></strong></div>
         </div>
+
+        <h2>REVISIÓN DE RESPUESTAS Y SOLUCIONES:</h2>
+        <div class="review-box" id="review-container">
+            <!-- Se carga el resumen de respuestas aquí -->
+        </div>
+
         <button class="btn" onclick="showLeaderboardScreen()">🏆 VER TABLA DE POSICIONES</button>
         <button class="btn btn-secondary" onclick="restartGame()">JUGAR DE NUEVO</button>
     </div>
@@ -439,6 +427,7 @@
     <!-- PANTALLA 4: TABLA DE POSICIONES Y EXPORTACIÓN A EXCEL -->
     <div id="screen-leaderboard" class="screen">
         <h1>🏆 TABLA DE POSICIONES GENERAL</h1>
+        
         <div class="table-container">
             <table>
                 <thead>
@@ -456,10 +445,11 @@
                 </tbody>
             </table>
         </div>
+
         <button class="btn btn-excel" onclick="exportToCSV()">📥 DESCARGAR RESULTADOS (EXCEL / CSV)</button>
-        <button class="btn btn-danger" onclick="clearLeaderboardData()">🗑️ BORRAR HISTORIAL DE PARTICIPANTES</button>
         <button class="btn btn-secondary" onclick="restartGame()">🏠 VOLVER AL INICIO</button>
     </div>
+
 </div>
 
 <script>
@@ -560,7 +550,7 @@ const ALL_QUESTIONS = [
   },
   {
     "id": 9,
-    "pregunta": "建筑¿CUÁL ES EL OBJETIVO DEL PROCEDIMIENTO REES-PR-04?",
+    "pregunta": "¿CUÁL ES EL OBJETIVO DEL PROCEDIMIENTO REES-PR-04?",
     "correcta": "ATENDER, RADICAR Y DAR RESPUESTA A SOLICITUDES RELACIONADAS CON TRÁMITES CATASTRALES.",
     "opciones": [
       "ATENDER, RADICAR Y DAR RESPUESTA A SOLICITUDES RELACIONADAS CON TRÁMITES CATASTRALES.",
@@ -636,67 +626,18 @@ const ALL_QUESTIONS = [
 let playerName = "";
 let playerArea = "";
 let selectedQuestions = [];
+let userAnswersHistory = [];
 let currentIndex = 0;
 let score = 0;
 let gemsCollected = 0;
 let secondsElapsed = 0;
 let timerInterval = null;
-let currentQuestionAnswered = false;
-let currentQuestionData = null;
-
-const LEADERBOARD_BLOB_ID = '019faa34-3199-7dc5-87b8-ed93e1a0da9a';
-const LEADERBOARD_BLOB_URL = `https://jsonblob.com/api/jsonBlob/${LEADERBOARD_BLOB_ID}`;
 
 // ANIMACIÓN CANVAS
 let canvas, ctx;
 let animFrame = 0;
 let animState = "idle";
 let particles = [];
-let audioCtx = null;
-
-function ensureAudio() {
-    if (!audioCtx) {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    }
-    return audioCtx;
-}
-
-function playTone(frequency, duration, type = 'sine', volume = 0.03, delay = 0) {
-    try {
-        const ctx = ensureAudio();
-        if (ctx.state === 'suspended') {
-            ctx.resume();
-        }
-        const oscillator = ctx.createOscillator();
-        const gainNode = ctx.createGain();
-        oscillator.type = type;
-        oscillator.frequency.setValueAtTime(frequency, ctx.currentTime + delay);
-        gainNode.gain.setValueAtTime(volume, ctx.currentTime + delay);
-        gainNode.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + delay + duration);
-        oscillator.connect(gainNode);
-        gainNode.connect(ctx.destination);
-        oscillator.start(ctx.currentTime + delay);
-        oscillator.stop(ctx.currentTime + delay + duration + 0.01);
-    } catch(e){}
-}
-
-function playCorrectSound() {
-    playTone(880, 0.12, 'triangle', 0.03);
-    setTimeout(() => playTone(1100, 0.12, 'sine', 0.025), 70);
-}
-function playWrongSound() {
-    playTone(220, 0.2, 'sawtooth', 0.03);
-    setTimeout(() => playTone(180, 0.18, 'square', 0.025), 90);
-}
-function playVictorySound() {
-    playTone(523.25, 0.15, 'triangle', 0.04);
-    setTimeout(() => playTone(659.25, 0.15, 'triangle', 0.04), 140);
-    setTimeout(() => playTone(783.99, 0.25, 'triangle', 0.03), 280);
-}
-function playDefeatSound() {
-    playTone(220, 0.2, 'sawtooth', 0.04);
-    setTimeout(() => playTone(170, 0.25, 'square', 0.03), 110);
-}
 
 function shuffleArray(array) {
     let arr = [...array];
@@ -720,28 +661,33 @@ function startGame(area) {
     }
     playerName = inputVal;
     playerArea = area;
+
     document.getElementById('hud-name').innerText = playerName;
+
     let availableQuestions = [];
     if (area === 'GCAC') {
         availableQuestions = ALL_QUESTIONS.filter(q => q.comercial === true);
-    } else if (area === 'SUPAC') {
+    } else if (area === 'SPAC') {
         availableQuestions = ALL_QUESTIONS.filter(q => q.rosada === false);
     }
+
     if (availableQuestions.length < 5) {
         availableQuestions = ALL_QUESTIONS;
     }
+
     selectedQuestions = shuffleArray(availableQuestions).slice(0, 5);
+    userAnswersHistory = [];
+    
     currentIndex = 0;
     score = 0;
     gemsCollected = 0;
     secondsElapsed = 0;
-    currentQuestionAnswered = false;
-    currentQuestionData = null;
+
     for(let i = 1; i <= 5; i++) {
         document.getElementById(`gem-${i}`).classList.remove('acquired');
     }
+
     showScreen('screen-game');
-    playTone(440, 0.08, 'square', 0.02);
     initCanvas();
     startTimer();
     renderQuestion();
@@ -757,93 +703,118 @@ function startTimer() {
 
 function renderQuestion() {
     animState = "idle";
-    currentQuestionAnswered = false;
-    currentQuestionData = selectedQuestions[currentIndex];
+    const feedbackBanner = document.getElementById('feedback-banner');
+    feedbackBanner.className = 'feedback-banner';
+    feedbackBanner.innerText = '';
+
+    const q = selectedQuestions[currentIndex];
     document.getElementById('question-number').innerText = `ENIGMA ${currentIndex + 1} DE 5`;
-    document.getElementById('question-text').innerText = currentQuestionData.pregunta;
+    document.getElementById('question-text').innerText = q.pregunta;
+    
     const container = document.getElementById('options-container');
-    const feedbackBox = document.getElementById('feedback-box');
-    const nextBtn = document.getElementById('next-question-btn');
     container.innerHTML = '';
-    feedbackBox.style.display = 'none';
-    feedbackBox.className = 'feedback-box';
-    nextBtn.style.display = 'none';
-    let shuffledOptions = shuffleArray(currentQuestionData.opciones);
+
+    let shuffledOptions = shuffleArray(q.opciones);
     shuffledOptions.forEach(opt => {
         const btn = document.createElement('button');
         btn.className = 'option-btn';
         btn.innerText = opt;
-        btn.onclick = () => selectOption(opt, currentQuestionData.correcta);
+        btn.onclick = () => selectOption(btn, opt, q.correcta);
         container.appendChild(btn);
     });
 }
 
-function selectOption(selectedOpt, correctOpt) {
-    if (currentQuestionAnswered) return;
-    currentQuestionAnswered = true;
+function selectOption(clickedBtn, selectedOpt, correctOpt) {
     const buttons = document.querySelectorAll('.option-btn');
-    const feedbackBox = document.getElementById('feedback-box');
-    const nextBtn = document.getElementById('next-question-btn');
-    buttons.forEach(b => {
-        b.disabled = true;
-        if (b.innerText === correctOpt) {
-            b.classList.add('correct-answer');
-        }
-        if (b.innerText === selectedOpt && selectedOpt !== correctOpt) {
-            b.classList.add('wrong-answer');
-        }
+    buttons.forEach(b => b.disabled = true);
+
+    const feedbackBanner = document.getElementById('feedback-banner');
+    const isCorrect = selectedOpt === correctOpt;
+
+    // Guardar para la pantalla final
+    userAnswersHistory.push({
+        question: selectedQuestions[currentIndex].pregunta,
+        selected: selectedOpt,
+        correct: correctOpt,
+        isCorrect: isCorrect
     });
-    if (selectedOpt === correctOpt) {
+
+    if (isCorrect) {
         score += 20;
         gemsCollected++;
         document.getElementById(`gem-${gemsCollected}`).classList.add('acquired');
+        clickedBtn.classList.add('correct-highlight');
+        
+        feedbackBanner.className = 'feedback-banner correct';
+        feedbackBanner.innerText = '¡RESPUESTA CORRECTA! HAS CONSEGUIDO UNA GEMA DEL SABER.';
         animState = "attack_hit";
-        feedbackBox.className = 'feedback-box correct';
-        feedbackBox.innerHTML = `✅ RESPUESTA CORRECTA. <br>¡+20 PUNTOS Y +1 GEMA DEL SABER!`;
-        playCorrectSound();
     } else {
+        clickedBtn.classList.add('wrong-highlight');
+        
+        // Resaltar la opción correcta
+        buttons.forEach(b => {
+            if (b.innerText === correctOpt) {
+                b.classList.add('correct-highlight');
+            }
+        });
+
+        feedbackBanner.className = 'feedback-banner wrong';
+        feedbackBanner.innerText = `¡INCORRECTO! LA RESPUESTA CORRECTA ERA: "${correctOpt}"`;
         animState = "attack_miss";
-        feedbackBox.className = 'feedback-box wrong';
-        feedbackBox.innerHTML = `❌ RESPUESTA INCORRECTA. <br>LA OPCIÓN CORRECTA ERA: <strong>${correctOpt}</strong>`;
-        playWrongSound();
     }
-    feedbackBox.style.display = 'block';
-    nextBtn.innerText = currentIndex === 4 ? '🏁 VER RESULTADO FINAL' : '➡️ SIGUIENTE PREGUNTA';
-    nextBtn.style.display = 'block';
+
+    setTimeout(() => {
+        currentIndex++;
+        if (currentIndex < 5) {
+            renderQuestion();
+        } else {
+            finishGame();
+        }
+    }, 2800); // Dar un poco más de tiempo para leer la respuesta correcta
 }
 
-function advanceToNextQuestion() {
-    if (currentQuestionAnswered === false) return;
-    currentIndex++;
-    if (currentIndex < 5) {
-        renderQuestion();
-    } else {
-        finishGame();
-    }
-}
-
-async function finishGame() {
+function finishGame() {
     clearInterval(timerInterval);
-    await saveGameData();
+    
+    saveGameData();
+
     showScreen('screen-result');
+
     const badge = document.getElementById('result-badge');
     const title = document.getElementById('result-title');
+
     document.getElementById('res-name').innerText = playerName;
-    document.getElementById('res-area').innerText = playerArea === 'GCAC' ? 'GERENCIA COMERCIAL' : 'SUBGERENCIA DE PARTICIPACIÓN Y ATENCIÓN AL CIUDADANO';
+    document.getElementById('res-area').innerText = playerArea === 'GCAC' ? 'GERENCIA COMERCIAL Y ATENCIÓN AL CIUDADANO' : 'SUBGERENCIA DE PARTICIPACIÓN Y ATENCIÓN AL CIUDADANO';
     document.getElementById('res-gems').innerText = `${gemsCollected} / 5`;
     document.getElementById('res-score').innerText = `${score} / 100 PTS`;
     document.getElementById('res-time').innerText = `${secondsElapsed} SEGUNDOS`;
+
+    // Renderizar resumen de revisión de preguntas
+    const reviewContainer = document.getElementById('review-container');
+    reviewContainer.innerHTML = '';
+    userAnswersHistory.forEach((item, index) => {
+        const div = document.createElement('div');
+        div.className = 'review-item';
+        div.innerHTML = `
+            <div style="font-weight: bold; color: #fbbf24;">${index + 1}. ${item.question}</div>
+            <div style="color: ${item.isCorrect ? '#34d399' : '#f87171'};">
+                TU RESPUESTA: ${item.selected} ${item.isCorrect ? '✔ (CORRECTO)' : '✖ (INCORRECTO)'}
+            </div>
+            ${!item.isCorrect ? `<div style="color: #38bdf8; font-weight: bold;">RESPUESTA CORRECTA: ${item.correct}</div>` : ''}
+        `;
+        reviewContainer.appendChild(div);
+    });
+
     const finalCanvas = document.getElementById('finalBattleCanvas');
     canvas = finalCanvas;
     ctx = canvas.getContext('2d');
+
     if (gemsCollected >= 4) {
-        playVictorySound();
         title.innerText = "¡VICTORIA ÉPICA!";
         badge.innerText = "¡HAS DERROTADO AL DRAGÓN CATASTRAL!";
         badge.className = "badge badge-win";
         animState = "win_animation";
     } else {
-        playDefeatSound();
         title.innerText = "¡DERROTA EN LA MAZMORRA!";
         badge.innerText = "¡EL DRAGÓN TE HA INCINERADO!";
         badge.className = "badge badge-lose";
@@ -851,247 +822,438 @@ async function finishGame() {
     }
 }
 
-// REINICIAR Y NAVEGACIÓN
-function restartGame() {
-    clearInterval(timerInterval);
-    document.getElementById('player-name').value = '';
-    showScreen('screen-welcome');
-}
-
 // ALMACENAMIENTO Y TABLA DE POSICIONES
-function normalizeLeaderboardData(data) {
-    if (!Array.isArray(data)) return [];
-    return data
-        .map(item => ({
-            name: item.name || 'ANÓNIMO',
-            area: item.area || 'SIN ÁREA',
-            gems: Number(item.gems) || 0,
-            score: Number(item.score) || 0,
-            time: Number(item.time) || 0,
-            date: item.date || new Date().toLocaleString()
-        }))
-        .sort((a, b) => b.gems - a.gems || a.time - b.time);
-}
-
-function mergeLeaderboardData(localData, remoteData) {
-    const merged = [...localData, ...remoteData];
-    const unique = [];
-    const seen = new Set();
-    merged.forEach(item => {
-        const key = `${item.name}|${item.area}|${item.gems}|${item.score}|${item.time}|${item.date}`;
-        if (!seen.has(key)) {
-            seen.add(key);
-            unique.push(item);
-        }
-    });
-    return normalizeLeaderboardData(unique);
-}
-
-async function loadLeaderboardData() {
-    const localData = normalizeLeaderboardData(JSON.parse(localStorage.getItem('dragon_leaderboard') || '[]'));
-    try {
-        const response = await fetch(LEADERBOARD_BLOB_URL, { cache: 'no-cache' });
-        if (response.ok) {
-            const remoteData = await response.json();
-            return mergeLeaderboardData(localData, remoteData);
-        }
-    } catch (e) {
-        console.warn("Uso local de tabla por falta de conexión remota", e);
-    }
-    return localData;
-}
-
-async function saveGameData() {
-    const record = {
+function saveGameData() {
+    let history = JSON.parse(localStorage.getItem('dragon_leaderboard')) || [];
+    const newRecord = {
         name: playerName,
-        area: playerArea === 'GCAC' ? 'GCAC' : 'SUPAC',
+        area: playerArea,
         gems: gemsCollected,
         score: score,
         time: secondsElapsed,
         date: new Date().toLocaleString()
     };
-    let currentData = normalizeLeaderboardData(JSON.parse(localStorage.getItem('dragon_leaderboard') || '[]'));
-    currentData.push(record);
-    currentData = normalizeLeaderboardData(currentData);
-    localStorage.setItem('dragon_leaderboard', JSON.stringify(currentData));
+    history.push(newRecord);
+    
+    history.sort((a, b) => b.gems - a.gems || a.time - b.time);
+    localStorage.setItem('dragon_leaderboard', JSON.stringify(history));
+}
 
-    try {
-        const remoteData = await loadLeaderboardData();
-        const updatedRemote = mergeLeaderboardData(remoteData, [record]);
-        await fetch(LEADERBOARD_BLOB_URL, {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(updatedRemote)
+function showLeaderboardScreen() {
+    const history = JSON.parse(localStorage.getItem('dragon_leaderboard')) || [];
+    const tbody = document.getElementById('leaderboard-body');
+    tbody.innerHTML = '';
+
+    if (history.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;">NO HAY REGISTROS AÚN</td></tr>';
+    } else {
+        history.forEach((rec, index) => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td><strong>${index + 1}</strong></td>
+                <td>${rec.name}</td>
+                <td>${rec.area}</td>
+                <td>💎 ${rec.gems}</td>
+                <td>${rec.score} PTS</td>
+                <td>${rec.time}s</td>
+            `;
+            tbody.appendChild(tr);
         });
-    } catch(e) {
-        console.warn("No se guardó en la nube:", e);
     }
-}
 
-async function showLeaderboardScreen() {
     showScreen('screen-leaderboard');
-    const body = document.getElementById('leaderboard-body');
-    body.innerHTML = '<tr><td colspan="6" style="text-align:center;">CARGANDO POSICIONES...</td></tr>';
-    const data = await loadLeaderboardData();
-    body.innerHTML = '';
-    if (data.length === 0) {
-        body.innerHTML = '<tr><td colspan="6" style="text-align:center;">NO HAY REGISTROS TODAVÍA.</td></tr>';
-        return;
-    }
-    data.forEach((item, index) => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${index + 1}</td>
-            <td>${item.name}</td>
-            <td>${item.area}</td>
-            <td>💎 ${item.gems}</td>
-            <td>${item.score} PTS</td>
-            <td>${item.time}S</td>
-        `;
-        body.appendChild(row);
-    });
 }
 
-// BORRAR DATOS DE PARTICIPANTES
-async function clearLeaderboardData() {
-    if (confirm("¿ESTÁS SEGURO DE QUE DESEAS BORRAR A TODOS LOS PARTICIPANTES REGISTRADOS?")) {
-        localStorage.removeItem('dragon_leaderboard');
-        try {
-            await fetch(LEADERBOARD_BLOB_URL, {
-                method: 'PUT',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify([])
-            });
-        } catch(e) {
-            console.warn("No se pudo limpiar la tabla en la nube", e);
-        }
-        showLeaderboardScreen();
-    }
-}
-
-// EXPORTACIÓN A CSV
-async function exportToCSV() {
-    const data = await loadLeaderboardData();
-    if (data.length === 0) {
-        alert("NO HAY DATOS PARA EXPORTAR.");
+function exportToCSV() {
+    const history = JSON.parse(localStorage.getItem('dragon_leaderboard')) || [];
+    if (history.length === 0) {
+        alert("NO HAY DATOS PARA EXPORTAR");
         return;
     }
-    let csvContent = "data:text/csv;charset=utf-8,";
-    csvContent += "POSICION,NOMBRE,AREA,GEMAS,PUNTOS,TIEMPO_SEGUNDOS,FECHA\n";
-    data.forEach((item, index) => {
-        csvContent += `${index + 1},"${item.name}","${item.area}",${item.gems},${item.score},${item.time},"${item.date}"\n`;
+
+    let csvContent = "data:text/csv;charset=utf-8,\uFEFF";
+    csvContent += "POSICIÓN,NOMBRE,ÁREA,GEMAS,PUNTAJE,TIEMPO (S),FECHA\n";
+
+    history.forEach((r, idx) => {
+        csvContent += `"${idx + 1}","${r.name}","${r.area}","${r.gems}","${r.score}","${r.time}","${r.date}"\n`;
     });
+
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
-    link.setAttribute("download", "reporte_mazmorra_dragón.csv");
+    link.setAttribute("download", `REPORTE_DRAGON_CATASTRAL_${new Date().toISOString().slice(0,10)}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
 }
 
-// CANVAS ANIMATION LOGIC
+function restartGame() {
+    showScreen('screen-welcome');
+}
+
+// DIBUJO Y ANIMACIÓN CANVAS
 function initCanvas() {
     canvas = document.getElementById('battleCanvas');
-    if (!canvas) return;
     ctx = canvas.getContext('2d');
+    particles = [];
+    requestAnimationFrame(gameLoop);
 }
 
-function drawHero(x, y, state) {
-    ctx.save();
-    ctx.translate(x, y);
+function gameLoop() {
+    if (!canvas || !ctx) return;
     
-    // Sombra
-    ctx.fillStyle = "rgba(0,0,0,0.3)";
-    ctx.beginPath();
-    ctx.ellipse(0, 45, 20, 8, 0, 0, Math.PI * 2);
-    ctx.fill();
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    ctx.fillStyle = "#1e293b";
+    ctx.fillRect(0, 160, canvas.width, 40);
+    ctx.fillStyle = "#f59e0b";
+    ctx.fillRect(0, 157, canvas.width, 3);
 
-    // Movimiento oscilante
-    let bob = Math.sin(animFrame * 0.1) * 3;
-    if (state === "attack_hit") bob = -Math.abs(Math.sin(animFrame * 0.3) * 12);
+    animFrame++;
 
-    // Cuerpo / Armadura
-    ctx.fillStyle = "#64748b";
-    ctx.fillRect(-12, -10 + bob, 24, 30);
+    if (animState === "idle") {
+        drawKnight(110, 115, false, false);
+        drawDragon(580, 75, false, false);
+    } 
+    else if (animState === "attack_hit") {
+        let shiftX = Math.sin(animFrame * 0.5) * 35;
+        drawKnight(110 + shiftX, 115, true, false);
+        drawDragon(580 + (Math.random() * 8 - 4), 75, false, true);
+        createSparkles(530, 80, 4);
+    } 
+    else if (animState === "attack_miss") {
+        drawKnight(110 + (Math.random() * 4 - 2), 115, false, true);
+        drawDragon(580, 75, true, false);
+        createFireParticles(510, 85, 120, 110, 10);
+    }
+    else if (animState === "win_animation") {
+        let progress = Math.min(1, (animFrame % 120) / 70);
+        let knightX = 110 + progress * 380;
+        let dragonFading = progress > 0.5;
+        let dragonDead = progress > 0.85;
 
-    // Espada
-    ctx.fillStyle = "#cbd5e1";
-    ctx.fillRect(12, -20 + bob, 6, 30);
-    ctx.fillStyle = "#fbbf24";
-    ctx.fillRect(8, 5 + bob, 14, 4);
+        drawDragon(580, 75, false, dragonFading, dragonDead);
+        drawKnight(knightX, 115, true, false);
 
-    // Cabeza / Casco
-    ctx.fillStyle = "#94a3b8";
-    ctx.beginPath();
-    ctx.arc(0, -20 + bob, 14, 0, Math.PI * 2);
-    ctx.fill();
+        if (progress > 0.45 && !dragonDead) {
+            createSparkles(550, 70, 8);
+        }
+    }
+    else if (animState === "lose_animation") {
+        drawDragon(580, 75, true, false);
+        createFireParticles(510, 85, 110, 110, 15);
+        drawKnight(110, 115, false, true, false, true);
+    }
 
-    // Visor brillante
-    ctx.fillStyle = "#38bdf8";
-    ctx.fillRect(2, -23 + bob, 8, 4);
-
-    ctx.restore();
+    updateAndDrawParticles();
+    requestAnimationFrame(gameLoop);
 }
 
-function drawDragon(x, y, state) {
+function createFireParticles(startX, startY, targetX, targetY, count) {
+    for (let i = 0; i < count; i++) {
+        particles.push({
+            x: startX,
+            y: startY + (Math.random() * 20 - 10),
+            vx: - (5 + Math.random() * 9),
+            vy: (Math.random() * 4 - 2),
+            size: 6 + Math.random() * 12,
+            life: 1.0,
+            decay: 0.02 + Math.random() * 0.03,
+            color: Math.random() > 0.3 ? "#ef4444" : (Math.random() > 0.5 ? "#f97316" : "#facc15"),
+            type: "fire"
+        });
+    }
+}
+
+function createSparkles(x, y, count) {
+    for (let i = 0; i < count; i++) {
+        particles.push({
+            x: x + (Math.random() * 40 - 20),
+            y: y + (Math.random() * 40 - 20),
+            vx: (Math.random() * 6 - 3),
+            vy: (Math.random() * 6 - 3),
+            size: 3 + Math.random() * 5,
+            life: 1.0,
+            decay: 0.04,
+            color: "#38bdf8",
+            type: "sparkle"
+        });
+    }
+}
+
+function updateAndDrawParticles() {
+    for (let i = particles.length - 1; i >= 0; i--) {
+        let p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.life -= p.decay;
+
+        if (p.life <= 0) {
+            particles.splice(i, 1);
+            continue;
+        }
+
+        ctx.save();
+        ctx.globalAlpha = p.life;
+        ctx.fillStyle = p.color;
+        
+        if (p.type === "fire") {
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size * p.life, 0, Math.PI * 2);
+            ctx.fill();
+        } else {
+            ctx.fillRect(p.x, p.y, p.size, p.size);
+        }
+        ctx.restore();
+    }
+}
+
+function drawKnight(x, y, isAttacking, isHit, isDead = false, isIncinerating = false) {
     ctx.save();
     ctx.translate(x, y);
 
-    // Sombra
-    ctx.fillStyle = "rgba(0,0,0,0.4)";
-    ctx.beginPath();
-    ctx.ellipse(0, 50, 40, 12, 0, 0, Math.PI * 2);
-    ctx.fill();
+    if (isIncinerating) {
+        let tremble = Math.random() * 6 - 3;
+        ctx.translate(tremble, 0);
 
-    let breath = Math.sin(animFrame * 0.08) * 4;
+        ctx.fillStyle = "#334155";
+        ctx.fillRect(-12, -25, 24, 25);
+        ctx.fillStyle = "#1e293b";
+        ctx.fillRect(-10, -42, 20, 18);
 
-    // Cuerpo Dragón
-    ctx.fillStyle = "#dc2626";
-    ctx.beginPath();
-    ctx.ellipse(0, 0 + breath, 35, 28, 0, 0, Math.PI * 2);
-    ctx.fill();
+        ctx.fillStyle = "#f97316";
+        ctx.beginPath();
+        ctx.arc(0, -20, 22 + Math.random() * 8, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = "#ef4444";
+        ctx.beginPath();
+        ctx.arc(0, -25, 14 + Math.random() * 6, 0, Math.PI * 2);
+        ctx.fill();
 
-    // Cabeza Dragón
+        ctx.restore();
+        return;
+    }
+
+    let breath = Math.sin(animFrame * 0.1) * 1.5;
+
     ctx.fillStyle = "#b91c1c";
     ctx.beginPath();
-    ctx.ellipse(-25, -20 + breath, 20, 14, -0.2, 0, Math.PI * 2);
-    ctx.fill();
-
-    // Ojo ardiente
-    ctx.fillStyle = "#fbbf24";
-    ctx.beginPath();
-    ctx.arc(-30, -23 + breath, 4, 0, Math.PI * 2);
-    ctx.fill();
-
-    // Alas
-    ctx.fillStyle = "#991b1b";
-    ctx.beginPath();
-    ctx.moveTo(10, -10 + breath);
-    ctx.lineTo(45, -45 + breath * 1.5);
-    ctx.lineTo(25, 10 + breath);
+    ctx.moveTo(-10, -35);
+    ctx.lineTo(-28, -5 + breath);
+    ctx.lineTo(-12, -5);
     ctx.closePath();
     ctx.fill();
 
+    ctx.fillStyle = "#1e293b";
+    ctx.fillRect(-12, -12, 10, 14);
+    ctx.fillRect(2, -12, 10, 14);
+
+    ctx.fillStyle = isHit ? "#dc2626" : "#64748b";
+    ctx.beginPath();
+    ctx.moveTo(-14, -38);
+    ctx.lineTo(14, -38);
+    ctx.lineTo(10, -12);
+    ctx.lineTo(-10, -12);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.fillStyle = "#fbbf24";
+    ctx.fillRect(-3, -32, 6, 12);
+    ctx.fillRect(-7, -28, 14, 4);
+
+    ctx.fillStyle = isHit ? "#991b1b" : "#475569";
+    ctx.beginPath();
+    ctx.arc(0, -46 + breath * 0.5, 14, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.fillStyle = "#0f172a";
+    ctx.fillRect(-8, -48 + breath * 0.5, 16, 5);
+    ctx.fillStyle = "#38bdf8";
+    ctx.fillRect(-4, -47 + breath * 0.5, 5, 3);
+
+    ctx.fillStyle = "#dc2626";
+    ctx.beginPath();
+    ctx.moveTo(0, -60 + breath * 0.5);
+    ctx.quadraticCurveTo(-15, -65, -12, -48);
+    ctx.lineTo(0, -56);
+    ctx.fill();
+
+    if (isAttacking) {
+        ctx.fillStyle = "#d97706";
+        ctx.fillRect(-18, -35, 8, 18);
+
+        ctx.fillStyle = "#94a3b8";
+        ctx.fillRect(8, -32, 18, 6);
+
+        ctx.fillStyle = "#f8fafc";
+        ctx.beginPath();
+        ctx.moveTo(26, -34);
+        ctx.lineTo(65, -29);
+        ctx.lineTo(26, -24);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.strokeStyle = "#38bdf8";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        ctx.fillStyle = "#fbbf24";
+        ctx.fillRect(24, -37, 4, 12);
+
+    } else {
+        ctx.fillStyle = "#d97706";
+        ctx.beginPath();
+        ctx.moveTo(8, -38);
+        ctx.lineTo(22, -38);
+        ctx.lineTo(18, -15);
+        ctx.lineTo(8, -22);
+        ctx.closePath();
+        ctx.fill();
+        ctx.strokeStyle = "#fbbf24";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        ctx.fillStyle = "#cbd5e1";
+        ctx.fillRect(-4, -58, 4, 25);
+        ctx.fillStyle = "#fbbf24";
+        ctx.fillRect(-8, -36, 12, 4);
+    }
+
     ctx.restore();
 }
 
-function loop() {
-    animFrame++;
-    if (ctx && canvas) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
-        // Dibujar escenario
-        let heroX = 150;
-        let dragonX = 600;
-        let centerY = 110;
+function drawDragon(x, y, isBreathingFire, isHit, isDead = false) {
+    ctx.save();
+    ctx.translate(x, y);
 
-        drawHero(heroX, centerY, animState);
-        drawDragon(dragonX, centerY, animState);
+    if (isDead) {
+        ctx.fillStyle = "#0f172a";
+        ctx.beginPath();
+        ctx.ellipse(0, 30, 60, 15, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = "#ef4444";
+        ctx.font = "900 14px Montserrat, sans-serif";
+        ctx.fillText("💥 ¡DRAGÓN DERROTADO!", -70, 40);
+        ctx.restore();
+        return;
     }
-    requestAnimationFrame(loop);
+
+    let breath = Math.sin(animFrame * 0.15) * 3;
+
+    ctx.strokeStyle = isHit ? "#dc2626" : "#047857";
+    ctx.lineWidth = 10;
+    ctx.beginPath();
+    ctx.moveTo(40, 20);
+    ctx.quadraticCurveTo(80, 10 + breath, 75, -20);
+    ctx.stroke();
+
+    ctx.fillStyle = "#dc2626";
+    ctx.beginPath();
+    ctx.moveTo(75, -20);
+    ctx.lineTo(85, -28);
+    ctx.lineTo(68, -32);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.fillStyle = "#064e3b";
+    ctx.beginPath();
+    ctx.moveTo(10, -10);
+    ctx.lineTo(55, -75 + breath);
+    ctx.lineTo(25, -20);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.fillStyle = isHit ? "#ef4444" : "#10b981";
+    ctx.beginPath();
+    ctx.ellipse(0, 10, 48, 35, -0.2, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.fillStyle = "#f59e0b";
+    ctx.beginPath();
+    ctx.ellipse(-18, 15, 20, 25, 0.2, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.fillStyle = isHit ? "#dc2626" : "#059669";
+    ctx.beginPath();
+    ctx.moveTo(-20, -10);
+    ctx.quadraticCurveTo(-35, -40 + breath, -45, -45 + breath);
+    ctx.lineTo(-25, -50 + breath);
+    ctx.quadraticCurveTo(-10, -30, 5, -15);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.moveTo(-35, -55 + breath);
+    ctx.lineTo(-75, -45 + breath);
+    ctx.lineTo(-70, -25 + breath);
+    ctx.lineTo(-30, -35 + breath);
+    ctx.closePath();
+    ctx.fill();
+
+    if (isBreathingFire) {
+        ctx.beginPath();
+        ctx.moveTo(-70, -25 + breath);
+        ctx.lineTo(-65, -10 + breath);
+        ctx.lineTo(-45, -20 + breath);
+        ctx.closePath();
+        ctx.fill();
+    }
+
+    ctx.fillStyle = "#fbbf24";
+    ctx.beginPath();
+    ctx.moveTo(-35, -52 + breath);
+    ctx.quadraticCurveTo(-25, -80 + breath, -10, -75 + breath);
+    ctx.lineTo(-30, -48 + breath);
+    ctx.fill();
+
+    ctx.fillStyle = isBreathingFire ? "#facc15" : "#f8fafc";
+    ctx.beginPath();
+    ctx.arc(-50, -42 + breath, 5, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = "#000";
+    ctx.fillRect(-51, -44 + breath, 2, 5);
+
+    ctx.fillStyle = isHit ? "#b91c1c" : "#047857";
+    ctx.beginPath();
+    ctx.moveTo(-5, -15);
+    ctx.lineTo(40, -85 + breath * 1.5);
+    ctx.lineTo(15, -25);
+    ctx.lineTo(-5, -60 + breath * 1.5);
+    ctx.lineTo(-15, -15);
+    ctx.closePath();
+    ctx.fill();
+    ctx.strokeStyle = "#10b981";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    ctx.fillStyle = "#1e293b";
+    ctx.fillRect(-30, 38, 8, 12);
+    ctx.fillRect(-15, 40, 8, 12);
+    ctx.fillRect(10, 38, 8, 12);
+
+    ctx.restore();
+ // Los resultados generales se consultan de forma privada en Supabase.
 }
-requestAnimationFrame(loop);
+
+
+function restartGame() {
+    showScreen('screen-welcome');
+}
+
+function escapeHtml(value) {
+    const div = document.createElement('div');
+    div.textContent = String(value || '');
+    return div.innerHTML;
+}
+function shuffleArray(array) {
+    const copy = [...array];
+    for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+}
 </script>
+
 </body>
 </html>
