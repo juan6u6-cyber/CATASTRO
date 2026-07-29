@@ -691,12 +691,14 @@ function playVictorySound() {
     setTimeout(() => playTone(164.81, 0.16, 'triangle', 0.02), 420);
 }
 function playDefeatSound() {
-    // Sonido de fuego: más duradero, con crepitar y un decaimiento cálido
-    playTone(330, 0.4, 'sawtooth', 0.05);
-    setTimeout(() => playTone(290, 0.35, 'square', 0.045), 90);
-    setTimeout(() => playTone(250, 0.4, 'sawtooth', 0.04), 180);
-    setTimeout(() => playTone(220, 0.45, 'triangle', 0.03), 280);
-    setTimeout(() => playTone(196, 0.33, 'triangle', 0.025), 360);
+    // Sonido de fuego/rugido: base grave sostenida, cuerpo rugiente y cierre explosivo
+    playTone(100, 0.8, 'sawtooth', 0.045);
+    setTimeout(() => playTone(130, 0.65, 'square', 0.035), 120);
+    setTimeout(() => playTone(170, 0.55, 'sawtooth', 0.032), 260);
+    setTimeout(() => playTone(220, 0.45, 'triangle', 0.03), 420);
+    setTimeout(() => playTone(280, 0.36, 'triangle', 0.025), 560);
+    setTimeout(() => playTone(340, 0.28, 'sawtooth', 0.02), 700);
+    setTimeout(() => playTone(260, 0.22, 'square', 0.018), 860);
 }
 function shuffleArray(array) {
     let arr = [...array];
