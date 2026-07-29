@@ -384,13 +384,13 @@
 <div class="container">
     <!-- PANTALLA 1: BIENVENIDA E INGRESO -->
     <div id="screen-welcome" class="screen active">
-        <h1>BREAKOUT: LA MAZMORRA DEL DRAGÓN CATASTRAL</h1>
+        <h1>BREAKOUT: EL CALABOZO DEL DRAGÓN CATASTRAL</h1>
         <div style="font-size: 50px; margin: 10px 0;">🤺 ⚔️ 🐉</div>
         <div class="hero-card">
             <div class="status-chip">⚔️ MODO DE BATALLA • 5 ENIGMAS</div>
-            <p class="accent-text">GANA CON 4 DE 5 GEMAS PARA DERROTAR AL DRAGÓN Y ESCAPAR DE LA MAZMORRA.</p>
+            <p class="accent-text">GANA CON 4 DE 5 GEMAS PARA DERROTAR AL DRAGÓN Y ESCAPAR DE EL CALABOZO.</p>
         </div>
-        <p>TOMA EL ROL DEL <strong>CABALLERO CATASTRAL</strong> Y ENFRENTA AL DRAGÓN QUE CUSTODIA LA SALIDA DE LA MAZMORRA.</p>
+        <p>TOMA EL ROL DEL <strong>CABALLERO CATASTRAL</strong> Y ENFRENTA AL DRAGÓN QUE CUSTODIA LA SALIDA DE EL CALABOZO.</p>
         <div class="tip-list">
             <div class="tip-item">🎯 RESPONDE CON CALMA Y USA LA LÓGICA DE LOS PROCEDIMIENTOS.</div>
             <div class="tip-item">⚡ CADA ACIERTO SUMA 20 PUNTOS Y UNA GEMA DEL SABER.</div>
@@ -841,7 +841,7 @@ async function finishGame() {
         animState = "win_animation";
     } else {
         playDefeatSound();
-        title.innerText = "¡DERROTA EN LA MAZMORRA!";
+        title.innerText = "¡DERROTA EN EL CALABOZO!";
         badge.innerText = "¡EL DRAGÓN TE HA INCINERADO!";
         badge.className = "badge badge-lose";
         animState = "lose_animation";
