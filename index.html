@@ -396,7 +396,7 @@
         <input type="text" id="player-name" placeholder="INGRESA TU NOMBRE COMPLETO..." onkeypress="if(event.key==='Enter') event.preventDefault();">
         <h2>SELECCIONA TU GERENCIA O SUBGERENCIA:</h2>
         <button class="btn" onclick="startGame('GCAC')">GERENCIA COMERCIAL Y ATENCIÓN AL CIUDADANO (GCAC)</button>
-        <button class="btn btn-secondary" onclick="startGame('SUPAC')">SUBGERENCIA DE PARTICIPACIÓN Y ATENCIÓN AL CIUDADANO (SUPAC)</button>
+        <button class="btn" onclick="startGame('SUPAC')">SUBGERENCIA DE PARTICIPACIÓN Y ATENCIÓN AL CIUDADANO (SUPAC)</button>
         <button class="btn btn-secondary" style="margin-top: 15px;" onclick="showLeaderboardScreen()">🏆 VER TABLA DE POSICIONES GENERAL</button>
     </div>
     <!-- PANTALLA 2: JUEGO CON CANVAS Y GEMAS -->
@@ -446,7 +446,7 @@
     <!-- PANTALLA 4: TABLA DE POSICIONES Y EXPORTACIÓN A EXCEL -->
     <div id="screen-leaderboard" class="screen" style="position: relative;">
         <h1>🏆 TABLA DE POSICIONES GENERAL</h1>
-        <button class="hidden-delete-btn" onclick="clearLeaderboard()" title="BORRAR REGISTROS">BORRAR REGISTROS</button>
+        <button class="hidden-delete-btn" onclick="clearLeaderboard()" title="BORRAR REGISTROS">🗑️</button>
         <div class="table-container">
             <table>
                 <thead>
