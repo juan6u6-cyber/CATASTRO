@@ -678,12 +678,10 @@ function playTone(frequency, duration, type = 'sine', volume = 0.03, delay = 0) 
     oscillator.stop(ctx.currentTime + delay + duration + 0.01);
 }
 function playCorrectSound() {
-    playTone(880, 0.12, 'triangle', 0.03);
-    setTimeout(() => playTone(1100, 0.12, 'sine', 0.025), 70);
+    playVictorySound();
 }
 function playWrongSound() {
-    playTone(220, 0.2, 'sawtooth', 0.03);
-    setTimeout(() => playTone(180, 0.18, 'square', 0.025), 90);
+    playDefeatSound();
 }
 function playVictorySound() {
     playTone(523.25, 0.15, 'triangle', 0.04);
@@ -693,6 +691,7 @@ function playVictorySound() {
 function playDefeatSound() {
     playTone(220, 0.2, 'sawtooth', 0.04);
     setTimeout(() => playTone(170, 0.25, 'square', 0.03), 110);
+    setTimeout(() => playTone(130.81, 0.22, 'triangle', 0.025), 240);
 }
 function shuffleArray(array) {
     let arr = [...array];
